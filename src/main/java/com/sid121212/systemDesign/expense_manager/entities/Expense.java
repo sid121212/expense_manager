@@ -39,6 +39,10 @@ public class Expense {
 		this.paidBy = paidBy;
 	}
 
+	public Expense() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}

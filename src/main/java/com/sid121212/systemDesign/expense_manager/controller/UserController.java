@@ -24,7 +24,7 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	@PostMapping("/create_user")
+	@PostMapping
     public ResponseEntity<String> createUser(@RequestBody User user) {
         try {
             userService.createUser(user);
@@ -35,7 +35,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/get_user/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getUser(@PathVariable Long id) {
         try {
             User user = userService.getUser(id);
@@ -51,7 +51,7 @@ public class UserController {
     }
     
     
-    @DeleteMapping("/delete_user/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id){
     	try {
 			userService.deleteUser(id);

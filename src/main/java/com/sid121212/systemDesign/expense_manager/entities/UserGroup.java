@@ -12,6 +12,10 @@ import jakarta.persistence.Table;
 @Table(name = "user_group_table")
 public class UserGroup {
 	
+	public UserGroup() {
+		
+	}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

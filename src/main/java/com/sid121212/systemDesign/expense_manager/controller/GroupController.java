@@ -24,7 +24,7 @@ public class GroupController {
 		this.groupService = groupService;
 	}
 	
-	@GetMapping("/get_group/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<?> getGroup(@PathVariable Long id){
 		try {
 			Group group = groupService.getGroup(id);
@@ -38,7 +38,7 @@ public class GroupController {
 		}
 	}
 	
-	@PostMapping("/create_group")
+	@PostMapping
 	public ResponseEntity<String> createGroup(@RequestBody Group group){
 		try {
 			groupService.createGroup(group);
@@ -48,7 +48,7 @@ public class GroupController {
 		}
 	}
 	
-	@DeleteMapping("/delete_group/{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<String> deleteGroup(@PathVariable Long id){
 		try {
 			groupService.deleteGroup(id);

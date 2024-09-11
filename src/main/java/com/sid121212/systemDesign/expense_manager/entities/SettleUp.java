@@ -36,6 +36,10 @@ public class SettleUp {
 		this.amount = amount;
 	}
 
+	public SettleUp() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -67,6 +71,16 @@ public class SettleUp {
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
+	
+	@Override
+    public String toString() {
+        return "SettleUp{" +
+                "id=" + id +
+                ", expenseId=" + (expense != null ? expense.getId() : "null") +
+                ", payer=" + (payer != null ? payer.getName() : "null") +
+                ", amount=" + amount +
+                '}';
+    }
     
     
 	

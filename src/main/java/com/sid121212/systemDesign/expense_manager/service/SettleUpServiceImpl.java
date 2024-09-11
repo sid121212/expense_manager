@@ -56,7 +56,6 @@ public class SettleUpServiceImpl implements SettleUpService{
 
 		Map<String,BigDecimal> owedMap = new HashMap<>();
 		for (SettleUp split:settleUps) {
-			System.out.println(split.toString());
 			User userWhopaid = split.getExpense().getPaidBy();
 			if (owedMap.containsKey(userWhopaid.getName())) {
 				owedMap.put(userWhopaid.getName(), owedMap.get(userWhopaid.getName()).add(split.getAmount()));
@@ -64,12 +63,7 @@ public class SettleUpServiceImpl implements SettleUpService{
 				owedMap.put(userWhopaid.getName(),split.getAmount());
 			}
 		}
-//		owedMap.forEach((key,value) -> {
-//			System.out.println("Key="+key+" Value="+value);
-//		});
         Map<String, Object> result = new HashMap<>();
-//        result.put("owed", oweMap);
-        
         Map<String,BigDecimal> owesMap = new HashMap<>();
         for (SettleUp split:owedBy) {
         	if (owesMap.containsKey(split.getPayer().getName())) {
@@ -77,7 +71,6 @@ public class SettleUpServiceImpl implements SettleUpService{
         	}else {
         		owesMap.put(split.getPayer().getName(),split.getAmount());
 			}
-//        	System.out.println(split.toString());
         }
         result.put("owedBy", owesMap);  // What the user owes to others
         result.put("owedTo", owedMap);
